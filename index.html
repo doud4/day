@@ -1,94 +1,87 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Memórias do Amor</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nosso Primeiro Dia dos Namorados</title>
   <style>
     body {
-      background-color: #e0f0e5; /* verde floresta claro */
-      font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      padding: 40px 0;
+      background: #e0f0e5; /* verde suave */
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
+      font-family: 'Segoe UI', sans-serif;
     }
-
     .iphone-frame {
-      background-color: #fff;
-      border: 10px solid #5e4634; /* marrom */
+      width: 360px;
+      height: 640px;
+      background: #fff;
+      border: 12px solid #5e4634; /* marrom */
       border-radius: 40px;
-      width: 375px;
-      height: 667px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
       align-items: center;
     }
-
     h1 {
+      margin: 15px 10px 5px;
+      font-size: 18px;
       color: #5e4634;
       text-align: center;
-      font-size: 18px;
-      margin: 20px 10px 10px 10px;
     }
-
-    .carousel {
+    #carousel {
       width: 100%;
-      height: 420px;
+      flex: 1;
       position: relative;
       overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
     }
-
     .carousel-track {
       display: flex;
-      transition: transform 0.5s ease-in-out;
+      flex-direction: column;
+      transition: transform 0.4s ease-in-out;
     }
-
     .carousel img {
-      max-height: 100%;
-      width: auto;
+      max-width: 100%;
+      max-height: 420px;
       object-fit: contain;
+      margin: 0 auto;
       border-radius: 20px;
     }
-
     .buttons {
       display: flex;
       justify-content: space-between;
-      width: 80%;
-      margin: 10px auto;
+      width: 85%;
+      margin: 10px auto 0;
     }
-
     .buttons button {
-      padding: 6px 12px;
-      background-color: #5e4634;
-      color: white;
+      background: #5e4634;
+      color: #fff;
       border: none;
-      border-radius: 6px;
-      font-size: 14px;
+      padding: 8px 16px;
+      border-radius: 8px;
       cursor: pointer;
+      font-size: 14px;
     }
-
+    .buttons button:hover {
+      background: #3e2d24;
+    }
     .caption {
-      text-align: center;
       font-size: 14px;
       color: #5e4634;
-      padding: 8px;
+      padding: 10px;
+      text-align: center;
+      height: 40px;
+      overflow-y: auto;
     }
-
     .music {
-      background-color: #f3f3f3;
-      border-top: 1px solid #ccc;
       width: 100%;
+      border-top: 1px solid #ccc;
+      padding: 5px 0;
+      background: #f8f8f8;
     }
-
     .music iframe {
       width: 100%;
       height: 80px;
@@ -98,11 +91,12 @@
   </style>
 </head>
 <body>
+
   <div class="iphone-frame">
     <h1>Nosso Primeiro Dia dos Namorados</h1>
 
-    <div class="carousel" id="carousel">
-      <div class="carousel-track" id="carouselTrack">
+    <div id="carousel">
+      <div class="carousel-track" id="track">
         <img src="https://i.imgur.com/OseBWTT.jpeg" alt="Foto 1">
         <img src="https://i.imgur.com/YBdDYCh.png" alt="Foto 2">
         <img src="https://i.imgur.com/D0fInS0.jpeg" alt="Foto 3">
@@ -110,52 +104,57 @@
         <img src="https://i.imgur.com/32vFNoA.jpeg" alt="Foto 5">
         <img src="https://i.imgur.com/7IPkVH3.jpeg" alt="Foto 6">
         <img src="https://i.imgur.com/6E0kk3y.jpeg" alt="Foto 7">
-        <img src="https://placekitten.com/375/500" alt="Foto 8"> <!-- com botão de play -->
+        <img src="https://i.imgur.com/OseBWTT.jpeg" alt="Foto 8">
       </div>
     </div>
 
     <div class="buttons">
-      <button onclick="prevSlide()">←</button>
-      <button onclick="nextSlide()">→</button>
+      <button onclick="prev()">↑</button>
+      <button onclick="next()">↓</button>
     </div>
 
-    <div class="caption" id="caption">
-      Primeira legenda – nossa primeira memória 🌸
-    </div>
+    <div class="caption" id="caption">Primeira legenda – nossa primeira memória 🌸</div>
 
     <div class="music">
-      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3QZT6SZ7ue8QKQdq0ccaxv?utm_source=generator" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      <iframe src="https://open.spotify.com/embed/track/7AF7suQv3pef5Gzy2Qb1Xr?utm_source=generator" allow="autoplay; encrypted-media;" loading="lazy"></iframe>
     </div>
   </div>
 
   <script>
-    const track = document.getElementById('carouselTrack');
+    const track = document.getElementById('track');
+    const caption = document.getElementById('caption');
     const captions = [
-      "Primeira legenda –  If I loved you less, I might be able to talk about it more",
-      "Segunda legenda – tudo começou com a promessa de figurinhas sensacionais",
-      "Terceira legenda – primeiro date",
-      "Quarta legenda – primeira movie night",
-      "Quinta legenda – primeiro carnaval",
-      "Sexta legenda – primeira vez em ararinhas",
-      "Sétima legenda – primeira vez na pg",
+      "Primeira legenda – nossa primeira memória 🌸",
+      "Segunda legenda – nosso sorriso favorito 💕",
+      "Terceira legenda – um dia inesquecível ☀️",
+      "Quarta legenda – aquele momento só nosso ✨",
+      "Quinta legenda – rimos até cansar 😂",
+      "Sexta legenda – nosso abracinho 🍃",
+      "Sétima legenda – dia de paz e amor 🌈",
       "Oitava legenda – com som de coração 🎵"
     ];
-    let currentIndex = 0;
+    let idx = 0;
 
-    function updateCarousel() {
-      track.style.transform = `translateX(-${currentIndex * 375}px)`;
-      document.getElementById('caption').textContent = captions[currentIndex];
+    function update() {
+      const itemHeight = track.children[idx].getBoundingClientRect().height;
+      const offset = track.children[idx].offsetTop;
+      track.style.transform = `translateY(-${offset}px)`;
+      caption.textContent = captions[idx];
     }
 
-    function nextSlide() {
-      if (currentIndex < captions.length - 1) currentIndex++;
-      updateCarousel();
+    function next() {
+      if (idx < track.children.length - 1) idx++;
+      update();
     }
 
-    function prevSlide() {
-      if (currentIndex > 0) currentIndex--;
-      updateCarousel();
+    function prev() {
+      if (idx > 0) idx--;
+      update();
     }
+
+    window.addEventListener('resize', update);
+    window.addEventListener('load', update);
   </script>
+
 </body>
 </html>
