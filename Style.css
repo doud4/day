@@ -1,0 +1,72 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #d5e8d4; /* verde floresta claro */
+  font-family: 'Helvetica Neue', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.iphone-frame {
+  background: white;
+  border: 12px solid #4e342e; /* marrom */
+  border-radius: 36px;
+  width: 320px;
+  height: 600px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 12px;
+}
+
+.carousel {
+  flex-grow: 1;
+  position: relative;
+  display: flex;
+  overflow: hidden;
+}
+
+.slide {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.slide.active {
+  display: flex;
+}
+
+.slide img {
+  max-width: 100%;
+  max-height: 360px;
+  object-fit: contain;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.controls {
+  text-align: center;
+  margin-top: 8px;
+}
+
+button {
+  background-color: #4e342e;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  margin: 0 8px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+p {
+  color: #4e342e;
+  margin: 4px 0;
+  font-size: 14px;
+}
