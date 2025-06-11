@@ -1,184 +1,148 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
   <title>Nosso Primeiro Dia dos Namorados</title>
   <style>
     body {
       margin: 0;
-      padding: 0;
-      font-family: 'Helvetica Neue', sans-serif;
-      background-color: #fdf6f0;
-      color: #444;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-height: 100vh;
-      padding: 20px;
-    }
-
-    .container {
-      background-color: white;
-      border-radius: 20px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-      padding: 20px;
-      max-width: 400px;
-      width: 100%;
-      text-align: center;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #5D4037;
+      color: #FFFFFF;
     }
 
     h1 {
-      font-weight: 600;
-      font-size: 1.6em;
-      margin-bottom: 20px;
-      color: #cc6699;
+      text-align: center;
+      color: #A5D6A7;
+      padding: 20px 0;
     }
 
-    .carousel {
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+
+    #carousel {
       position: relative;
       overflow: hidden;
-      border-radius: 16px;
-      margin-bottom: 15px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
     }
 
     .carousel-track {
       display: flex;
-      transition: transform 0.4s ease-in-out;
+      transition: transform 0.5s ease-in-out;
     }
 
-    .carousel img {
+    .carousel-track img {
       width: 100%;
-      height: auto;
-      border-radius: 16px;
+      height: 350px;
+      object-fit: cover;
       flex-shrink: 0;
     }
 
     .buttons {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-bottom: 10px;
+      text-align: center;
+      margin-top: 10px;
     }
 
     button {
-      background-color: #cc6699;
+      background-color: #81C784;
       color: white;
       border: none;
-      padding: 8px 14px;
-      border-radius: 8px;
+      padding: 10px 20px;
+      margin: 0 10px;
+      font-size: 16px;
+      border-radius: 10px;
       cursor: pointer;
-      font-size: 0.9em;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #66BB6A;
     }
 
     .caption {
-      font-size: 0.95em;
-      color: #555;
-      margin-bottom: 10px;
-    }
-
-    .music {
-      margin-top: 20px;
-    }
-
-    iframe {
-      border: none;
-      width: 100%;
-      height: 80px;
-      border-radius: 12px;
-    }
-
-    .second-music {
-      margin-top: 10px;
-      display: none;
+      text-align: center;
+      font-size: 18px;
+      color: #A5D6A7;
+      padding: 10px 0;
     }
 
     .second-music iframe {
+      display: block;
+      margin: 20px auto;
       height: 60px;
+      border: none;
+      width: 100%;
+      max-width: 500px;
     }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>Nosso Primeiro Dia dos Namorados</h1>
-<div class="carousel" id="carousel">
-  <div class="carousel-track" id="carouselTrack">
-    <img src="https://i.imgur.com/OseBWTT.jpeg" alt="Foto 1">
-    <img src="https://i.imgur.com/YBdDYCh.png" alt="Foto 2">
-    <img src="https://i.imgur.com/D0fInS0.jpeg" alt="Foto 3">
-    <img src="https://i.imgur.com/BwdeGkY.jpeg" alt="Foto 4">
-    <img src="https://i.imgur.com/32vFNoA.jpeg" alt="Foto 5">
-    <img src="https://i.imgur.com/7IPkVH3.jpeg" alt="Foto 6">
-    <img src="https://i.imgur.com/6E0kk3y.jpeg" alt="Foto 7">
-    <img src="https://i.imgur.com/NiJdSOZ.jpeg" alt="Foto 8">
-  </div>
-</div>
+
+    <div class="carousel" id="carousel">
+      <div class="carousel-track" id="carouselTrack">
+        <img src="https://i.imgur.com/OseBWTT.jpeg" alt="Foto 1">
+        <img src="https://i.imgur.com/YBdDYCh.png" alt="Foto 2">
+        <img src="https://i.imgur.com/D0fInS0.jpeg" alt="Foto 3">
+        <img src="https://i.imgur.com/BwdeGkY.jpeg" alt="Foto 4">
+        <img src="https://i.imgur.com/32vFNoA.jpeg" alt="Foto 5">
+        <img src="https://i.imgur.com/7IPkVH3.jpeg" alt="Foto 6">
+        <img src="https://i.imgur.com/6E0kk3y.jpeg" alt="Foto 7">
+        <img src="https://placekitten.com/487/250" alt="Foto 8">
+      </div>
+    </div>
+
     <div class="buttons">
       <button onclick="prevSlide()">←</button>
       <button onclick="nextSlide()">→</button>
     </div>
 
     <div class="caption" id="caption">
-      Primeira legenda — nossa primeira memória 💌
+      Primeira legenda – nossa primeira memória 🌷
     </div>
 
-    <div class="music">
-      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/7qiZfU4dY1lWllzX7mPBI3?utm_source=generator" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-    </div>
-
-    <div class="second-music" id="secondMusic">
-      <p><strong>Uma música especial para este momento:</strong></p>
-      <iframe src="https://open.spotify.com/embed/track/2VxeLyX666F8uXCJ0dZF8B?utm_source=generator" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    <div class="second-music">
+      <iframe src="https://open.spotify.com/embed/track/7qiZfU4dY1lWllzX7mPBI3?utm_source=generator" allow="autoplay; clipboard-write; encrypted-media; fullscreen"></iframe>
     </div>
   </div>
 
   <script>
     const track = document.getElementById('carouselTrack');
-    const caption = document.getElementById('caption');
-    const secondMusic = document.getElementById('secondMusic');
-
+    const captions = [
+      "Primeira legenda – nossa primeira memória 🌷",
+      "Segunda legenda – risadas sem fim 😄",
+      "Terceira legenda – aquele passeio inesquecível ✨",
+      "Quarta legenda – nossos olhares 💘",
+      "Quinta legenda – nossa primeira dança 💃🕺",
+      "Sexta legenda – dia de preguiça juntos 🐻",
+      "Sétima legenda – nosso pôr do sol preferido 🌅",
+      "Oitava legenda – clique para ouvir nossa segunda música 🎶"
+    ];
+    const captionEl = document.getElementById('caption');
     let index = 0;
 
-    const captions = [
-      "Primeira legenda — nossa primeira memória 💌",
-      "Segunda legenda — um olhar que diz tudo ✨",
-      "Terceira legenda — nossos risos preferidos 😄",
-      "Quarta legenda — um abraço que acalma 🤍",
-      "Quinta legenda — entre músicas e silêncios 🎶",
-      "Sexta legenda — só nós dois no mundo 🌎",
-      "Sétima legenda — tudo em você me encanta 💫",
-      "Oitava legenda — e esse momento é só nosso 💖"
-    ];
-
     function updateCarousel() {
-      const width = document.querySelector('.carousel').offsetWidth;
-      track.style.transform = `translateX(-${index * width}px)`;
-      caption.textContent = captions[index];
-
-      // Mostra a segunda música somente na 8ª imagem
-      if (index === 7) {
-        secondMusic.style.display = "block";
-      } else {
-        secondMusic.style.display = "none";
-      }
+      const slideWidth = track.clientWidth;
+      track.style.transform = `translateX(-${index * slideWidth}px)`;
+      captionEl.innerText = captions[index];
     }
 
     function nextSlide() {
-      if (index < track.children.length - 1) {
-        index++;
-        updateCarousel();
-      }
+      index = (index + 1) % captions.length;
+      updateCarousel();
     }
 
     function prevSlide() {
-      if (index > 0) {
-        index--;
-        updateCarousel();
-      }
+      index = (index - 1 + captions.length) % captions.length;
+      updateCarousel();
     }
 
     window.addEventListener('resize', updateCarousel);
-    window.addEventListener('load', updateCarousel);
   </script>
 </body>
 </html>
