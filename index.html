@@ -1,163 +1,88 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nossa Memória</title>
-  <style>
-    body {
-      margin: 0;
-      background-color: #e8f5e9; /* verde floresta claro */
-      font-family: 'Helvetica Neue', sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-
-    .iphone-frame {
-      background-color: white;
-      border: 16px solid #4e342e; /* marrom */
-      border-radius: 40px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-      width: 320px;
-      height: 600px;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .carousel {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
-      height: 100%;
-    }
-
-    .slide {
-      min-width: 100%;
-      height: 100%;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 10px;
-      box-sizing: border-box;
-    }
-
-    .slide img {
-      max-height: 400px;
-      max-width: 280px;
-      object-fit: cover;
-      border-radius: 20px;
-      margin-bottom: 10px;
-    }
-
-    .caption {
-      color: #4e342e;
-      font-size: 16px;
-      text-align: center;
-      padding: 0 10px;
-    }
-
-    .controls {
-      position: absolute;
-      bottom: 10px;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      padding: 0 20px;
-    }
-
-    .controls button {
-      background-color: #4e342e;
-      color: white;
-      border: none;
-      padding: 8px 12px;
-      border-radius: 12px;
-      cursor: pointer;
-    }
-
-    .music {
-      margin-top: 10px;
-      width: 100%;
-      height: 80px;
-    }
-  </style>
-</head>
-<body>
-
-  <div class="iphone-frame">
-    <div class="carousel" id="carousel">
-      <!-- Slide 1 -->
-      <div class="slide">
-        <img src="https://i.imgur.com/OseBWTT.jpeg" alt="Imagem 1" />
-        <div class="caption">Nosso primeiro olhar</div>
-      </div>
-      <!-- Slide 2 -->
-      <div class="slide">
-        <img src="https://i.imgur.com/YBdDYCh.png" alt="Imagem 2" />
-        <div class="caption">O frio bom de estar com você</div>
-      </div>
-      <!-- Slide 3 -->
-      <div class="slide">
-        <img src="https://i.imgur.com/D0fInS0.jpeg" alt="Imagem 3" />
-        <div class="caption">A gente e a cidade</div>
-      </div>
-      <!-- Slide 4 -->
-      <div class="slide">
-        <img src="https://i.imgur.com/BwdeGkY.jpeg" alt="Imagem 4" />
-        <div class="caption">No seu abraço, meu lar</div>
-      </div>
-      <!-- Slide 5 -->
-      <div class="slide">
-        <img src="https://i.imgur.com/32vFNoA.jpeg" alt="Imagem 5" />
-        <div class="caption">Riso solto e alma leve</div>
-      </div>
-      <!-- Slide 6 -->
-      <div class="slide">
-        <img src="https://i.imgur.com/7IPkVH3.jpeg" alt="Imagem 6" />
-        <div class="caption">Caminhos que escolhem a gente</div>
-      </div>
-      <!-- Slide 7 -->
-      <div class="slide">
-        <img src="https://i.imgur.com/6E0kk3y.jpeg" alt="Imagem 7" />
-        <div class="caption">Nosso momento, nosso tempo</div>
-      </div>
-      <!-- Slide 8 com música -->
-      <div class="slide">
-        <img src="https://i.imgur.com/6E0kk3y.jpeg" alt="Imagem 8" />
-        <div class="caption">Com você, tudo canta melhor</div>
-        <div class="music">
-          <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/5vYwGMkwQmkR7xmmCJKghM?utm_source=generator" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nosso Dia</title>
+    <!-- Link do CSS externo -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="iphone-frame">
+      <div class="carousel-container">
+        <div class="carousel">
+          <div class="slide">
+            <img src="https://i.imgur.com/OseBWTT.jpeg" alt="Nós dois sorrindo no parque" loading="lazy" />
+            <p>Nosso primeiro Dia dos Namorados</p>
+          </div>
+          <div class="slide">
+            <img src="https://i.imgur.com/YBdDYCh.png" alt="Beijo na praça à noite" loading="lazy" />
+            <p>Nosso beijo favorito</p>
+          </div>
+          <div class="slide">
+            <img src="https://i.imgur.com/D0fInS0.jpeg" alt="Brincando na cozinha juntos" loading="lazy" />
+            <p>Risadas enquanto cozinhamos</p>
+          </div>
+          <div class="slide">
+            <img src="https://i.imgur.com/BwdeGkY.jpeg" alt="Abraço no fim de tarde" loading="lazy" />
+            <p>Abraço no pôr do sol</p>
+          </div>
+          <div class="slide">
+            <img src="https://i.imgur.com/32vFNoA.jpeg" alt="Foto espontânea em casa" loading="lazy" />
+            <p>Você no meu dia a dia</p>
+          </div>
+          <div class="slide">
+            <img src="https://i.imgur.com/7IPkVH3.jpeg" alt="Passeio de bicicleta juntos" loading="lazy" />
+            <p>Pedalando com amor</p>
+          </div>
+          <div class="slide">
+            <img src="https://i.imgur.com/6E0kk3y.jpeg" alt="Olhares apaixonados na cafeteria" loading="lazy" />
+            <p>Seu olhar me desmonta</p>
+          </div>
+          <div class="slide">
+            <img src="https://i.imgur.com/D0fInS0.jpeg" alt="Nosso momento mais especial" loading="lazy" />
+            <p>Com você, tudo faz sentido</p>
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0P38zStLDdQvUXhVCUpkOf?utm_source=generator&theme=0" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          </div>
         </div>
+        <button class="prev" tabindex="0">←</button>
+        <button class="next" tabindex="0">→</button>
       </div>
     </div>
 
-    <div class="controls">
-      <button onclick="prevSlide()">←</button>
-      <button onclick="nextSlide()">→</button>
-    </div>
-  </div>
+    <script>
+      const slides = document.querySelectorAll(".slide");
+      let currentIndex = 0;
 
-  <script>
-    let currentSlide = 0;
-    const carousel = document.getElementById("carousel");
-    const totalSlides = document.querySelectorAll(".slide").length;
+      function showSlide(index) {
+        const offset = -index * 100;
+        document.querySelector(
+          ".carousel"
+        ).style.transform = `translateX(${offset}%)`;
+      }
 
-    function updateSlide() {
-      carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
-    }
+      document.querySelector(".next").addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        showSlide(currentIndex);
+      });
 
-    function nextSlide() {
-      currentSlide = (currentSlide + 1) % totalSlides;
-      updateSlide();
-    }
+      document.querySelector(".prev").addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        showSlide(currentIndex);
+      });
 
-    function prevSlide() {
-      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-      updateSlide();
-    }
-  </script>
+      // Teclas ← e →
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "ArrowRight") {
+          currentIndex = (currentIndex + 1) % slides.length;
+          showSlide(currentIndex);
+        } else if (event.key === "ArrowLeft") {
+          currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+          showSlide(currentIndex);
+        }
+      });
 
-</body>
+      showSlide(currentIndex);
+    </script>
+  </body>
 </html>
