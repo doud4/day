@@ -1,32 +1,102 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head><link rel="stylesheet" href="style.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nosso Primeiro Dia dos Namorados</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Quicksand', sans-serif;
+      background: #fff7f0;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
 
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nosso Dia</title>
-      document.querySelector(".next").addEventListener("click", () => {
-        currentIndex = (currentIndex + 1) % slides.length;
-        showSlide(currentIndex);
-      });
+    h1 {
+      font-size: 2.5em;
+      color: #d678a7;
+      margin-bottom: 10px;
+      text-align: center;
+    }
 
-      document.querySelector(".prev").addEventListener("click", () => {
-        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-        showSlide(currentIndex);
-      });
+    .memory-container {
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.05);
+      padding: 20px;
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+    }
 
-      // Teclas ← e →
-      document.addEventListener("keydown", (event) => {
-        if (event.key === "ArrowRight") {
-          currentIndex = (currentIndex + 1) % slides.length;
-          showSlide(currentIndex);
-        } else if (event.key === "ArrowLeft") {
-          currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-          showSlide(currentIndex);
-        }
-      });
+    img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin: 15px 0;
+    }
 
-      showSlide(currentIndex);
-    </script>
-  </body>
+    .message {
+      font-size: 1.2em;
+      margin-top: 10px;
+      color: #555;
+    }
+
+    .music-player {
+      margin-top: 20px;
+    }
+
+    button {
+      background-color: #d678a7;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1em;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #b95c8e;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2em;
+      }
+      .message {
+        font-size: 1em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Nosso Primeiro Dia dos Namorados 💖</h1>
+
+  <div class="memory-container">
+    <img src="https://via.placeholder.com/600x400?text=Nosso+Amor" alt="Foto da nossa memória" />
+    
+    <p class="message">
+      Neste dia tão especial, eu só quero te lembrar o quanto você é importante para mim. Cada momento com você é um presente que guardo no coração. Feliz Dia dos Namorados! 💘
+    </p>
+
+    <div class="music-player">
+      <button onclick="playMusic()">Tocar nossa música</button><br><br>
+      <audio id="loveSong" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
+    </div>
+  </div>
+
+  <script>
+    function playMusic() {
+      const audio = document.getElementById("loveSong");
+      audio.play();
+    }
+  </script>
+</body>
 </html>
