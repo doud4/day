@@ -1,66 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
+  <head><link rel="stylesheet" href="style.css" />
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nosso Dia</title>
-    <!-- Link do CSS externo -->
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <div class="iphone-frame">
-      <div class="carousel-container">
-        <div class="carousel">
-          <div class="slide">
-            <img src="https://i.imgur.com/OseBWTT.jpeg" alt="Nós dois sorrindo no parque" loading="lazy" />
-            <p>Nosso primeiro Dia dos Namorados</p>
-          </div>
-          <div class="slide">
-            <img src="https://i.imgur.com/YBdDYCh.png" alt="Beijo na praça à noite" loading="lazy" />
-            <p>Nosso beijo favorito</p>
-          </div>
-          <div class="slide">
-            <img src="https://i.imgur.com/D0fInS0.jpeg" alt="Brincando na cozinha juntos" loading="lazy" />
-            <p>Risadas enquanto cozinhamos</p>
-          </div>
-          <div class="slide">
-            <img src="https://i.imgur.com/BwdeGkY.jpeg" alt="Abraço no fim de tarde" loading="lazy" />
-            <p>Abraço no pôr do sol</p>
-          </div>
-          <div class="slide">
-            <img src="https://i.imgur.com/32vFNoA.jpeg" alt="Foto espontânea em casa" loading="lazy" />
-            <p>Você no meu dia a dia</p>
-          </div>
-          <div class="slide">
-            <img src="https://i.imgur.com/7IPkVH3.jpeg" alt="Passeio de bicicleta juntos" loading="lazy" />
-            <p>Pedalando com amor</p>
-          </div>
-          <div class="slide">
-            <img src="https://i.imgur.com/6E0kk3y.jpeg" alt="Olhares apaixonados na cafeteria" loading="lazy" />
-            <p>Seu olhar me desmonta</p>
-          </div>
-          <div class="slide">
-            <img src="https://i.imgur.com/D0fInS0.jpeg" alt="Nosso momento mais especial" loading="lazy" />
-            <p>Com você, tudo faz sentido</p>
-            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0P38zStLDdQvUXhVCUpkOf?utm_source=generator&theme=0" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-          </div>
-        </div>
-        <button class="prev" tabindex="0">←</button>
-        <button class="next" tabindex="0">→</button>
-      </div>
-    </div>
-
-    <script>
-      const slides = document.querySelectorAll(".slide");
-      let currentIndex = 0;
-
-      function showSlide(index) {
-        const offset = -index * 100;
-        document.querySelector(
-          ".carousel"
-        ).style.transform = `translateX(${offset}%)`;
-      }
-
       document.querySelector(".next").addEventListener("click", () => {
         currentIndex = (currentIndex + 1) % slides.length;
         showSlide(currentIndex);
