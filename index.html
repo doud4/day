@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,115 +7,157 @@
   <style>
     body {
       margin: 0;
-      background-color: #e0f0e5;
+      background-color: #e8f5e9; /* verde floresta claro */
       font-family: 'Helvetica Neue', sans-serif;
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       height: 100vh;
     }
 
     .iphone-frame {
-      width: 360px;
-      height: 640px;
-      background-color: #fff;
-      border: 16px solid #5e4634;
-      border-radius: 36px;
+      background-color: white;
+      border: 16px solid #4e342e; /* marrom */
+      border-radius: 40px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      width: 320px;
+      height: 600px;
       overflow: hidden;
-      display: flex;
-      flex-direction: column;
       position: relative;
     }
 
     .carousel {
-      flex: 1;
-      overflow-x: hidden;
       display: flex;
-      flex-direction: row;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
+      transition: transform 0.5s ease-in-out;
+      height: 100%;
     }
 
     .slide {
-      scroll-snap-align: start;
-      flex: 0 0 100%;
-      width: 100%;
+      min-width: 100%;
       height: 100%;
       position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      box-sizing: border-box;
     }
 
     .slide img {
-      width: 100%;
-      height: auto;
-      max-height: 480px;
+      max-height: 400px;
+      max-width: 280px;
       object-fit: cover;
-      display: block;
-      margin: 0 auto;
-      border-bottom: 2px solid #5e4634;
+      border-radius: 20px;
+      margin-bottom: 10px;
     }
 
     .caption {
-      background-color: #5e4634;
-      color: white;
+      color: #4e342e;
+      font-size: 16px;
       text-align: center;
-      padding: 8px;
-      font-size: 14px;
+      padding: 0 10px;
     }
 
-    .audio {
-      padding: 10px;
-      background: #5e4634;
+    .controls {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
+      padding: 0 20px;
     }
 
-    .audio iframe {
+    .controls button {
+      background-color: #4e342e;
+      color: white;
       border: none;
-      width: 320px;
+      padding: 8px 12px;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+
+    .music {
+      margin-top: 10px;
+      width: 100%;
       height: 80px;
     }
   </style>
 </head>
 <body>
+
   <div class="iphone-frame">
-    <div class="carousel">
+    <div class="carousel" id="carousel">
+      <!-- Slide 1 -->
       <div class="slide">
-        <img src="https://i.imgur.com/OseBWTT.jpeg" alt="Foto 1" />
-        <div class="caption">Nosso primeiro dia dos namorados</div>
+        <img src="https://i.imgur.com/OseBWTT.jpeg" alt="Imagem 1" />
+        <div class="caption">Nosso primeiro olhar</div>
       </div>
+      <!-- Slide 2 -->
       <div class="slide">
-        <img src="https://i.imgur.com/YBdDYCh.png" alt="Foto 2" />
-        <div class="caption">Nosso primeiro passeio</div>
+        <img src="https://i.imgur.com/YBdDYCh.png" alt="Imagem 2" />
+        <div class="caption">O frio bom de estar com você</div>
       </div>
+      <!-- Slide 3 -->
       <div class="slide">
-        <img src="https://i.imgur.com/D0fInS0.jpeg" alt="Foto 3" />
-        <div class="caption">Teu sorriso favorito</div>
+        <img src="https://i.imgur.com/D0fInS0.jpeg" alt="Imagem 3" />
+        <div class="caption">A gente e a cidade</div>
       </div>
+      <!-- Slide 4 -->
       <div class="slide">
-        <img src="https://i.imgur.com/BwdeGkY.jpeg" alt="Foto 4" />
-        <div class="caption">Uma noite mágica</div>
+        <img src="https://i.imgur.com/BwdeGkY.jpeg" alt="Imagem 4" />
+        <div class="caption">No seu abraço, meu lar</div>
       </div>
+      <!-- Slide 5 -->
       <div class="slide">
-        <img src="https://i.imgur.com/32vFNoA.jpeg" alt="Foto 5" />
-        <div class="caption">A nossa trilha</div>
+        <img src="https://i.imgur.com/32vFNoA.jpeg" alt="Imagem 5" />
+        <div class="caption">Riso solto e alma leve</div>
       </div>
+      <!-- Slide 6 -->
       <div class="slide">
-        <img src="https://i.imgur.com/7IPkVH3.jpeg" alt="Foto 6" />
-        <div class="caption">Carinho em cada detalhe</div>
+        <img src="https://i.imgur.com/7IPkVH3.jpeg" alt="Imagem 6" />
+        <div class="caption">Caminhos que escolhem a gente</div>
       </div>
+      <!-- Slide 7 -->
       <div class="slide">
-        <img src="https://i.imgur.com/6E0kk3y.jpeg" alt="Foto 7" />
-        <div class="caption">Entre risos e abraços</div>
+        <img src="https://i.imgur.com/6E0kk3y.jpeg" alt="Imagem 7" />
+        <div class="caption">Nosso momento, nosso tempo</div>
       </div>
+      <!-- Slide 8 com música -->
       <div class="slide">
-        <img src="https://i.imgur.com/OseBWTT.jpeg" alt="Foto 8" />
-        <div class="caption">Nosso amor em cada nota</div>
-        <div class="audio">
-          <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0pDLxf94EgkZirBBzBqYCS?utm_source=generator" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <img src="https://i.imgur.com/6E0kk3y.jpeg" alt="Imagem 8" />
+        <div class="caption">Com você, tudo canta melhor</div>
+        <div class="music">
+          <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/5vYwGMkwQmkR7xmmCJKghM?utm_source=generator" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
         </div>
       </div>
     </div>
+
+    <div class="controls">
+      <button onclick="prevSlide()">←</button>
+      <button onclick="nextSlide()">→</button>
+    </div>
   </div>
+
+  <script>
+    let currentSlide = 0;
+    const carousel = document.getElementById("carousel");
+    const totalSlides = document.querySelectorAll(".slide").length;
+
+    function updateSlide() {
+      carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      updateSlide();
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      updateSlide();
+    }
+  </script>
+
 </body>
 </html>
